@@ -28,9 +28,3 @@ where \( E, F, G \) are coefficients of the first fundamental form. Minimizing t
 - **Topological Flexibility**: Choose domains (e.g., disks, annuli) that match the target surface's topology.
 - **Efficiency**: Avoids solving PDEs directly, enabling faster computation for complex boundaries.
 - **Physical Accuracy**: Accurately reproduces known minimal surfaces (e.g., catenoids, helicoids).
-
-## Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yamansan/Minimal-Surfaces-using-Neural-Networks.git
-   cd Minimal-Surfaces-using-Neural-Networks
