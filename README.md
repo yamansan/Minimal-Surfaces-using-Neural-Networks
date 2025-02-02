@@ -7,9 +7,9 @@ Soap films naturally form shapes that minimize their surface area, known as **mi
 ### Problem Formulation
 A minimal surface can be parametrized by coordinates \( u \) and \( v \), with position vectors \( \mathbf{r}(u, v) = (x(u,v), y(u,v), z(u,v)) \). The surface area is computed via the integral:
 \[
-\text{Area} = \iint_D \sqrt{EG - F^2} \, du \, dv
+\text{Area} = \iint_D |r_u \times r_v| \, du \, dv
 \]
-where \( E, F, G \) are coefficients of the first fundamental form. Minimizing this area while adhering to boundary constraints forms the core optimization problem.
+where r_u and r_v are the partial derivatives of the position vector with respect to u and v. Minimizing this area while adhering to boundary constraints forms the core optimization problem.
 
 ### Neural Network as a Parametrization
 - **Architecture**: A feedforward neural network with:
