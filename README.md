@@ -5,15 +5,15 @@ Soap films naturally form shapes that minimize their surface area, known as **mi
 
 ## Approach
 ### Problem Formulation
-A minimal surface can be parametrized by coordinates \( u \) and \( v \), with position vectors 
-\[
+A minimal surface can be parametrized by coordinates \( u \) and \( v \), with position vectors:
+$$
 \mathbf{r}(u, v) = \big(x(u,v),\, y(u,v),\, z(u,v)\big).
-\]
+$$
 The surface area is computed via the integral:
-\[
+$$
 \text{Area} = \iint_D \left\| \mathbf{r}_u \times \mathbf{r}_v \right\| \, du \, dv,
-\]
-where \( \mathbf{r}_u = \frac{\partial \mathbf{r}}{\partial u} \) and \( \mathbf{r}_v = \frac{\partial \mathbf{r}}{\partial v} \) are the partial derivatives of the position vector. Minimizing this area while adhering to boundary constraints forms the core optimization problem.
+$$
+where \( \mathbf{r}_u = \frac{\partial \mathbf{r}}{\partial u} \) and \( \mathbf{r}_v = \frac{\partial \mathbf{r}}{\partial v} \) are the partial derivatives. Minimizing this area while adhering to boundary constraints forms the core optimization problem.
 
 ### Neural Network as a Parametrization
 - **Architecture**: A feedforward neural network with:
@@ -21,13 +21,13 @@ where \( \mathbf{r}_u = \frac{\partial \mathbf{r}}{\partial u} \) and \( \mathbf
   - **Outputs**: \( x(u,v) \), \( y(u,v) \), \( z(u,v) \) (3D coordinates).
 - **Loss Function**: Combines:
   1. **Area Loss**: Approximated via discrete integration over sampled \( (u,v) \) points:
-     \[
+     $$
      \mathcal{L}_{\text{area}} = \frac{1}{N} \sum_{i=1}^N \left\| \mathbf{r}_u^{(i)} \times \mathbf{r}_v^{(i)} \right\|
-     \]
+     $$
   2. **Boundary Loss**: Mean squared error (MSE) between predicted and true boundary points:
-     \[
+     $$
      \mathcal{L}_{\text{boundary}} = \frac{1}{M} \sum_{j=1}^M \left\| \mathbf{r}(u_j, v_j) - \mathbf{r}_{\text{target}}(u_j, v_j) \right\|^2
-     \]
+     $$
 
 ### Training
 - **Optimizer**: Adam.
