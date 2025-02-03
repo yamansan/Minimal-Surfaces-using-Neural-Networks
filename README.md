@@ -2,6 +2,7 @@
 
 ## Introduction
 Soap films naturally form shapes that minimize their surface area, known as **minimal surfaces**. Mathematically, finding these surfaces involves solving complex partial differential equations (PDEs). This project leverages deep learning to approximate minimal surfaces for arbitrary boundary conditions, bypassing traditional numerical methods. By training a neural network to parametrize the surface and minimize its area, we achieve accurate and efficient results.
+![combined](https://github.com/user-attachments/assets/fb7b6536-836b-4c42-ac9c-5075fd566333)
 
 ## Approach
 ### Problem Formulation
